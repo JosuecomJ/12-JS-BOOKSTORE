@@ -10,7 +10,7 @@ module.exports = class Order {
     })
     this.#items = items
     this.#user = user
-    this.#total = items.reduce((sum, { product: quantity }) => sum + (product.price * quantity), 0)
+    this.#total = items.reduce((sum, { product, quantity }) => sum + (product.price * quantity), 0)
   }
   get data() {
     return {
